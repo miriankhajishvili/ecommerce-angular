@@ -8,6 +8,7 @@ import { MainLayoutModule } from './features/main-layout/main-layout.module';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +20,8 @@ import { MainLayoutModule } from './features/main-layout/main-layout.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MainLayoutModule
+    MainLayoutModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
