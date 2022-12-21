@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -20,6 +21,7 @@ import { MainLayoutModule } from './features/main-layout/main-layout.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     MainLayoutModule,
     
   ],

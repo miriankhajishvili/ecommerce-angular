@@ -13,9 +13,25 @@
     </div>
 
     <!-- Login Form -->
-    <form>
-      <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
-      <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
+    <form [formGroup]="form" (ngSubmit)="submit()">
+      <input type="text" id="login" class="fadeIn second" name="login" placeholder="login" formControlName="login" >
+      <div
+      *ngIf="
+        form.get('login')?.invalid &&
+        form.get('login')?.touched
+      "
+    >
+      <small>  Log in is required! </small>
+    </div>
+      <input type="text" id="password" class="fadeIn third" name="login" placeholder="password" formControlName="password">
+      <div
+      *ngIf="
+        form.get('password')?.invalid &&
+        form.get('password')?.touched
+      "
+    >
+      <small>  Password is required! </small>
+    </div>
       <input type="submit" class="fadeIn fourth" value="Log In">
     </form>
 
