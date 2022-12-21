@@ -14,7 +14,7 @@
 
     <!-- Login Form -->
     <form [formGroup]="form" (ngSubmit)="submit()">
-      <input type="text" id="login" class="fadeIn second" name="login" placeholder="login" formControlName="login" >
+      <input type="text" id="login" class="fadeIn second" name="email" placeholder="Email Address" formControlName="email" >
       <div
       *ngIf="
         form.get('login')?.invalid &&

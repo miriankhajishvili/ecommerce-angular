@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/core/services';
 
 @Component({
@@ -19,7 +20,8 @@ export class RegisterComponent implements OnInit {
   })
 
   constructor(
-    private authSerive:AuthService
+    private authSerive:AuthService,
+    private router : Router
   ) { }
 
   ngOnInit(): void {
@@ -31,7 +33,8 @@ export class RegisterComponent implements OnInit {
     console.log(this.form.value)
 
     this.authSerive.register(this.form.value).subscribe( res =>  {
-      console.log(res)
+      this.router.navigate(['/auth/login'])
+      
     })
   }
 
