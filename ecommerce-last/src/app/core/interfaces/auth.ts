@@ -16,4 +16,5 @@ export interface Login {
 export interface LoginResponse {
     user: User;
     accessToken: string;
+    
 }
