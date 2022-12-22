@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit, OnDestroy {
     .pipe(
       takeUntil(this.sub$),
       tap( res => {
-        this.cartService.getCarts()
+        this.cartService.getCarts().subscribe()
       })
     )
     .subscribe( res =>  {
