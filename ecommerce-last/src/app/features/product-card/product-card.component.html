@@ -1,17 +1,17 @@
 <div class="card">
     <div [ngStyle]="{
-        'background-image': 'url(https://cdn-images.farfetch-contents.com/14/96/53/25/14965325_24891051_1000.jpg)'
+        'background-image': 'url('+ product.image + ')'
     }" class="card-image">
 
     </div>
 
 
       <div class="p-2">
-        <h6> Product Name </h6>
+        <h6> {{product.name}} </h6>
       </div>
       <div  class="d=flex justify-content-between ">
         <div>
-            150$
+           {{product.price | currency: 'USD': true}}
         </div>
         <div>
             <button type="button" class="btn btn-outline-primary me-2">Add cart</button>
