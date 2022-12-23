@@ -16,9 +16,12 @@
           <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
         </form>
 
-        <div>
-          {{cartCount$ | async}}
-        </div>
+        <a routerLink="/cart" class="cart">
+          <div>
+            Cart
+          </div>
+          <div class="cart-badge">{{cartCount$ | async}}</div>
+        </a>
          
 
         <ng-container *ngIf="userIsAuthenticated; else notAuthenticated">
