@@ -11,7 +11,7 @@ export class BaseService {
     private http: HttpClient
   ) { }
 
-  post<T>(url: string, body: any): Observable<T>{
+  post<T>(url: string, body?: any): Observable<T>{
     return this.http.post<T>(this.apiUrl+ url, body)
   }
 
@@ -19,5 +19,8 @@ export class BaseService {
     return this.http.get<T>(this.apiUrl+ url, {params})
   }
 
+ delete<T>(url: string): Observable<T> {
+  return this.http.delete<T>(this.apiUrl + url)
 
+ }
 }

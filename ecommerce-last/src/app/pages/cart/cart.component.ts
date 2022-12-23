@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Cart } from 'src/app/core/interfaces/cart';
-import { CartService } from 'src/app/core/services';
+import { CartService, OrderService } from 'src/app/core/services';
 
 @Component({
   selector: 'app-cart',
@@ -13,7 +13,8 @@ export class CartComponent  implements OnInit{
   cartSum = 0
 
   constructor(
-    private cartService: CartService
+    private cartService: CartService,
+    private orderService: OrderService
   ){}
 
 
@@ -32,6 +33,28 @@ export class CartComponent  implements OnInit{
       this.cartSum = this.cartItems.reduce((acc, item) => acc +item.total, 0)
   
     }) 
+  }
+
+  removeItem(item: Cart){
+    this.cartService.deleteItem(item.id)
+    .pipe()
+    .subscribe(()=>
+    {
+      this.getCarts()
+    })
+  }
+
+  checkout(){
+
+    console.log('checkout')
+
+    this.orderService.createOrder()
+    .pipe()
+    .subscribe( res => {
+      console.log(res)
+      this.getCarts()
+    })
+
   }
  
 }

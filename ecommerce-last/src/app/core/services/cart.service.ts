@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, tap } from 'rxjs';
+import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { BaseService } from './base.service';
 
 @Injectable({
@@ -32,5 +32,9 @@ export class CartService extends BaseService {
     )
 
   }
+deleteItem( id: number) : Observable<any> {
+  return this.delete(`cart/${id}`)
+
+}
 
 }
