@@ -1,7 +1,7 @@
 <header class="p-3 mb-3 border-bottom">
     <div class="container">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start gap-3">
-        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none logo ">
+        <a routerLink="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none logo ">
          <img src="/assets/images/Logo.png">
         </a>
 
@@ -30,8 +30,8 @@
               <i class="fas fa-chevron-circle-down fa-lg"></i>   
             </a>
             <ul class="dropdown-menu text-small">
-              <li><a class="dropdown-item" href="#">Contant Manager</a></li>
-              <li><a class="dropdown-item" href="#">Orders</a></li>
+              <li><a class="dropdown-item" href="#" routerLink="/manager">Contant Manager</a></li>
+              <li><a class="dropdown-item" href="#"  routerLink="/orders">Orders</a></li>
 
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" (click)="signOut()">Sign out</a></li>
