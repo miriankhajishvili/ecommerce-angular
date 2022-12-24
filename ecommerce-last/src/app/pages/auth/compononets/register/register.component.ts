@@ -30,7 +30,7 @@ export class RegisterComponent implements OnInit {
     this.form.markAllAsTouched()
     if(this.form.invalid) return
 
-    console.log(this.form.value)
+    
 
     this.authSerive.register(this.form.value).subscribe( res =>  {
       this.router.navigate(['/auth/login'])
