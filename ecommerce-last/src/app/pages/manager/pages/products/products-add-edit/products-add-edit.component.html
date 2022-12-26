@@ -1,1 +1,32 @@
-<p>products-add-edit works!</p>
+<form [formGroup]="form" (ngSubmit)="submit()">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" placeholder="Name" formControlName="name">
+    </div>
+    <div class="form-group">
+        <label for="name">Description</label>
+        <textarea type="text" class="form-control" id="description" placeholder="Description" formControlName="description"> ></textarea> 
+      </div>
+      <div class="form-group">
+        <label for="image">Image url</label>
+        <input type="text" class="form-control" id="image" placeholder="Image" formControlName="image">
+      </div>
+      <div class="form-group">
+        <label for="name">Category</label>
+        <select class="form-select" formControlName="categoryId">
+            <option  selected>Open this select menu</option>
+            <option value="1">one</option>
+            <option value="2">two</option>
+            <option value="3">three</option>
+        
+        </select> 
+      </div>
+
+      <div class="form-group">
+        <label for="price">Price</label>
+        <input type="number" class="form-control" id="price" placeholder="Price" formControlName="price">
+      </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+    
+  </form>
