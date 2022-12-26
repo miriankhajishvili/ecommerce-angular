@@ -1,5 +1,5 @@
 <div class="p-2 d-flex justify-content-end"> 
-  <button  routerLink="/manager/categories/create" class="btn btn-primary">Add</button>
+  <button  routerLink="/manager/products/create" class="btn btn-primary">Add</button>
 </div>   
 
 
@@ -27,7 +27,7 @@
      
      
           <td>
-              <button type="button" class="btn btn-secondary mr-2" [routerLink]="['/manager/categories/edit', item.id ]">Edit</button>
+              <button type="button" class="btn btn-secondary mr-2" [routerLink]="['/manager/products/edit', item.id ]">Edit</button>
               <button type="button" class="btn btn-danger" (click)="deleteItem(item.id)">Remove</button>
           </td>
       </tr>

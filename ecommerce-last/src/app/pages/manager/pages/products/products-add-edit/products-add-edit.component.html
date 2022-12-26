@@ -14,11 +14,11 @@
       <div class="form-group">
         <label for="name">Category</label>
         <select class="form-select" formControlName="categoryId">
-            <option  selected>Open this select menu</option>
-            <option value="1">one</option>
-            <option value="2">two</option>
-            <option value="3">three</option>
-        
+           
+            <option *ngFor=" let category of categories$ | async" [value]="category.id" >
+              {{category.name}}
+            </option>
+           
         </select> 
       </div>
 

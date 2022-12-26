@@ -69,8 +69,6 @@ export class CategoryAddEditComponent implements OnInit {
     }
 
 
-
-
   }
 
 }
