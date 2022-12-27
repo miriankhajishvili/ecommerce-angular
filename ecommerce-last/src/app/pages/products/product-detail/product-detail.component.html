@@ -1,0 +1,13 @@
+<div class="d-flex" >
+    <div class="flex-initial" >
+        <img [src]="product.image" width="200px"/>
+    </div>
+    <div class="flex-fill" >
+        <h1>{{product.name}}</h1>
+        <div [innerText]="product.description" ></div>
+<div>
+    <input type="number" [(ngModel)]="quantity">
+    <button class="btn btn-primary" (click)="addToCart()" >Add to cart</button>
+</div>
+    </div>
+</div>

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, tap } from 'rxjs';
+import { Cart } from '../interfaces/cart';
 import { BaseService } from './base.service';
 
 @Injectable({
@@ -14,7 +15,7 @@ export class CartService extends BaseService {
     return this.get('cart')
     .pipe(
       tap((carts:any) => {
-        this.cartCount.next(carts.length)
+        this.cartCount.next(carts.reduce((acc: number, item: Cart)=> acc =item.quantity, 0))
       })
     )
   }

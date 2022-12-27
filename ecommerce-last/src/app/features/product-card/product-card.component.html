@@ -1,11 +1,11 @@
-<div class="card">
+<div  *ngIf="product" class="card" [routerLink]="['/products', product.id]"  >
     <div [ngStyle]="{
         'background-image': 'url('+ product.image + ')'
     }" class="card-image">
 
     </div>
 
-
+          ]
       <div class="p-2">
         <h6> {{product.name}} </h6>
       </div>
