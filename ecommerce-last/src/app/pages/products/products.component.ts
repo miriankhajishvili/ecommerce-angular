@@ -16,6 +16,7 @@ export class ProductsComponent  implements OnInit {
 
 
   categories$: Observable<Category[]> = this.categoryService.getAll()
+  search: any
 
  
   constructor(
@@ -27,15 +28,18 @@ export class ProductsComponent  implements OnInit {
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
       this.categoryId = params ['category']
+      this.search = params ['search']
+      this.getProducts()
     })
-    this.getProducts()
+    
     
 
   }
 
   getProducts(){
     const params = {
-      categoryId: this.categoryId 
+      categoryId: this.categoryId,
+      search: this.search || null
     }
     this.productService.getProducts(params)
     .pipe()
@@ -43,5 +47,16 @@ export class ProductsComponent  implements OnInit {
       this.products = res
     })
   }
+  
 
+  searchHandle(search: string){
+    if(search.length > 1){
+      this.search = search
+      this.getProducts()
+    } else{
+      this.search = null
+      this.getProducts()
+    }
+    
+  }
 }

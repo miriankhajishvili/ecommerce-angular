@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { ProductsRoutingModule } from './products-routing.module';
 import { ProductsComponent } from './products.component';
 import { ProductCardModule } from 'src/app/features/product-card/product-card.module';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -13,7 +14,10 @@ import { ProductCardModule } from 'src/app/features/product-card/product-card.mo
   imports: [
     CommonModule,
     ProductsRoutingModule,
-    ProductCardModule
+    ProductCardModule,
+    FormsModule
+    
+    
   ]
 })
 export class ProductsModule { }

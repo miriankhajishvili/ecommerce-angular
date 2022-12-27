@@ -7,6 +7,10 @@ import { BaseService } from './base.service';
 })
 export class OrderService extends BaseService {
 
+  getOrders(): Observable<any>{
+    return this.get('order')
+  }
+
   createOrder(): Observable<any>{
     return this.post('order')
   }
