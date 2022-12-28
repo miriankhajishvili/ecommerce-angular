@@ -48,6 +48,8 @@ export class ProductDetailComponent implements OnInit {
       productId: this.productId,
       quantity: this.quantity
     })
+    .pipe()
+    .subscribe()
   }
 
 

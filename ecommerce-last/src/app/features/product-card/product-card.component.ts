@@ -18,7 +18,8 @@ export class ProductCardComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  addToCart(){
+  addToCart($event: MouseEvent){
+    $event.stopPropagation()
     this.cartService.addToCart({
       productId: this.product.id,
       quantity: 1

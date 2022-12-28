@@ -8,7 +8,7 @@ import { BaseService } from './base.service';
 })
 export class CategoryService  extends BaseService{
 
-  getAll(){
+  getAll(): Observable<Category[]>{
     return this.get<Category[]>('category')
   }
 
