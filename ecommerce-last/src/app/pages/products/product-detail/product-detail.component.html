@@ -1,4 +1,4 @@
-<div class="d-flex" >
+<div class="d-flex gap-3" >
     <div class="flex-initial" >
         <img [src]="product.image" width="200px"/>
     </div>
@@ -10,4 +10,16 @@
     <button class="btn btn-primary" (click)="addToCart()" >Add to cart</button>
 </div>
     </div>
+    <div>
+     <div class="mb-4">
+        <div *ngIf="message" class="alert alert-success">
+            {{message}}
+        </div>
+    </div>
+ </div>
 </div>
+
+
+<div class="product-items">
+    <app-product-card *ngFor="let similarProduct of similarProducts" [product]="product" ></app-product-card>
+       </div>

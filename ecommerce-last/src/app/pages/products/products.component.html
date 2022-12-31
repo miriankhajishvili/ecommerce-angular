@@ -6,7 +6,7 @@
     class="list-group-item list-group-item-action" >All</a>
    <a *ngFor="let category of categories$ | async" 
     [routerLink]="['/products']"
-    (queryParams)="{category: category.id}"  
+    [queryParams]="{category: category.id}"  
     routerLinkActive="active" 
     class="list-group-item  list-group">
      {{category.name}}</a>

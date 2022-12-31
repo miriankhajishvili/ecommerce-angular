@@ -13,6 +13,8 @@ export class ProductDetailComponent implements OnInit {
   productId!: string
   product!: Product
   quantity!: 1
+  message?: string = ""
+  similarProducts : Product[] = []
 
   constructor(
     private route: ActivatedRoute,
@@ -27,6 +29,7 @@ export class ProductDetailComponent implements OnInit {
       this.getProduct()
     })
     
+    
   }
 
 
@@ -36,6 +39,7 @@ export class ProductDetailComponent implements OnInit {
     .pipe()
     .subscribe( product => {
       this.product = product
+      this.getProducts()
     })
   }
 
@@ -48,8 +52,29 @@ export class ProductDetailComponent implements OnInit {
       productId: this.productId,
       quantity: this.quantity
     })
+
+    .pipe()
+    .subscribe(() => {
+      this.message = 'Added to cart'
+      setTimeout(()=> {
+        this.message = undefined
+      }, 2000)
+    })
   }
 
+
+  getProducts(){
+    this.productService.getProducts({
+      limit: 5,
+      categoryId: this.product.category.id,
+      similar: this.product.id
+    })
+    .pipe()
+    .subscribe((products) => {
+      this.similarProducts = products
+    })
+    
+  }
 
 
 }
