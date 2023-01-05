@@ -6,9 +6,6 @@
     background-size: cover;
 }
 
-.product-items {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-    grid-gap: 20px;
-    margin: 20px 0;
-}
+.product-items{
+    margin: 20px 2px;
+  }
