@@ -24,8 +24,8 @@
 
         </form>
 
-        <a routerLink="/cart" class="cart">
-          <div>
+        <a *ngIf="userIsAuthenticated" routerLink="/cart" class="cart">
+          <div >
             Cart
           </div>
           <div class="cart-badge">{{cartCount$ | async}}</div>
